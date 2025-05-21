@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className="text-center">
-      <h1>Bienvenido a Mi Ecommerce</h1>
-      <p className="lead">Compra productos increíbles y gestiona el sitio si eres administrador.</p>
+      <h1>Compra Aqui</h1>
+      <p className="lead">Cosas Ilegales</p>
       
       <div className="mt-4">
         <Link to="/login" className="btn btn-primary m-2">Iniciar sesión</Link>
