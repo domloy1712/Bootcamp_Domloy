@@ -40,14 +40,16 @@ exports.borrar = async (req,res) => {
 
 exports.actualizar = async (req,res) => {
     const id_categoria = req.params.id;
-    const { nombre } = req.body;
+    const { name } = req.body;
     try {
         const [rows] = await pool.query('SELECT * FROM categories WHERE id = ? ', [id_categoria]);
         if (rows.length == 0){
-            res.status(404).json({massage: "No existe"});
-        }
-        await pool.query('UPDATE categories SET name = ? WHERE id = ? ', [nombre,id_categoria]);
+            res.status(404).json({message: "No existe"});
+        };
+        await pool.query('UPDATE categories SET name = ? WHERE id = ? ', [name,id_categoria]);
+        
         res.status(200).json({message: "Vale"});
+    
     } catch (error) {
         res.status(500).json({message: "No funciona", error: error.message});
     };
