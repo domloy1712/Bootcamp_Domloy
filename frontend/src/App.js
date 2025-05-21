@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/home';
 import Login from './pages/login';
-import Admin from './pages/Admin';
-import Categories from './pages/Categories';
+import Admin from './pages/admin';
+import Categories from './pages/categories';
 import Navbar from './components/navbar';
 
 function App() {
@@ -20,6 +20,8 @@ function App() {
       </div>
     </Router>
   );
-}
+};
+
+export default App;
 
 
