@@ -21,14 +21,14 @@ export default function Categories() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:4000/api/categories/${id}`, {
+    await axios.delete(`http://localhost:4000/api/categories/borrar/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     fetchCategories();
   };
 
   const handleUpdate = async (id, newName) => {
-    await axios.put(`http://localhost:4000/api/categories/${id}`, { name: newName }, {
+    await axios.put(`http://localhost:4000/api/categories/actualizar/${id}`, { name: newName }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     fetchCategories();
