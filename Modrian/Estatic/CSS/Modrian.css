@@ -1,0 +1,114 @@
+*{   
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box; 
+}
+body{
+    display: flex; 
+    width: 100vw; 
+    height: 100vh; 
+    justify-content: center;
+    align-items: center; 
+    background-color: yellow;
+
+
+}
+.contenedor{
+    
+    width: 50vh; 
+    height: 50vh;
+    border: 10px
+    
+}
+.Superior{
+   
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+.Inferior{
+    
+    display: flex;/*Para que los elementos se acomoden en fila*/
+    width: 100%;
+    height: 100%;
+}
+.caja1{
+    
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: 10px, solid #000;
+
+}
+.caja2{
+    
+    width:30%;
+    height:50%;
+    background-color: white;
+    border-right: 10px solid #000;
+    border-bottom:10px solid #000;
+    
+    
+}
+.caja3{
+    width: 30%;
+    height: 50%;
+    background-color:white;
+    border-right: 10px solid #000;
+   
+    
+}
+.Subcaja1{
+      
+    width: 100%;
+    height: 28%;
+    display:flex;
+    border-left: 10px solid #000;
+    border-right: 10px solid #000;
+    border-bottom: 10px solid #000;
+}
+.Subcaja2{
+    
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    border-right:10px solid #000;
+}
+.Subcaja3{
+    
+    width: 56%;
+    height: 100%;
+    background-color: white;
+
+}
+.Subcaja4{
+    
+    width: 15%;
+    height: 100%;
+}
+.subcaja12{ 
+    width: 100%;
+    height: 50%;
+    background-color: blue;
+    border-left: 10px solid #000;
+    border-bottom: 5px solid #000;
+}
+.subcaja13{
+    width: 100%;
+    height: 50%;
+    background-color: yellow;
+    border-left: 10px solid #000;
+    border-top: 5px solid #000;
+
+}
+
+
+
+  
+
+
+

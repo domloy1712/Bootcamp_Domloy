@@ -1,0 +1,39 @@
+html{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color: bisque;
+    width:600px;
+    height:1024px;
+    margin:0;
+
+}
+header{
+    width:40%;
+    height:30%;
+    margin-left:35%;
+
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+#arriba{
+    display:flex;
+    justify-content: space-between;
+    align-items: space-around;
+}
+#abajo{
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: space-around;
+}
+#botones{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: 2px black solid;
+    padding: 6px;
+}

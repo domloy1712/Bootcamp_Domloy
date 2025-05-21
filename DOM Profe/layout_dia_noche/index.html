@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modo Día/Noche</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .container {
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dia {
+      background-color: #f9f4ef;
+      color: #222;
+    }
+
+    .noche {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modo-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #444;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+
+    .modo-btn:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body class="dia">
+  <div class="container">
+    <h1>Bienvenido</h1>
+    <p>Haz clic en el botón para cambiar entre el modo día y el modo noche. Elige el estilo que más te guste para navegar cómodo.</p>
+    <button class="modo-btn" id="toggleBtn">Cambiar modo</button>
+  </div>
+
+  <script>
+    const boton = document.getElementById('toggleBtn');
+    const cuerpo = document.body;
+
+    boton.addEventListener('click', () => {
+      cuerpo.classList.toggle('dia');
+      cuerpo.classList.toggle('noche');
+    });
+  </script>
+</body>
+</html>

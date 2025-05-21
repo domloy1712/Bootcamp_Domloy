@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Iphone</title>
+    <link rel="stylesheet" href="./CSS/Estiloiphone.css">
+</head>
+<body>
+<table>
+    <tr>
+       <td colspan="4">
+            <form>
+                <input id="input"class="entrada"placeholder="0">
+            </form>
+        </td>
+    </tr>
+    <tr>
+            <td><button class="lightbutton">C</button></td>
+            <td><button class="lightbutton">+/-</button></td>
+            <td><button class="lightbutton">%</button></td>
+            <td><button class="accentbutton"onclick="operationfunction('·/·')">·/·</button></td>
+   </tr>
+    <tr>
+            <td><button class="darkbutton"onclick="add(7)">7</button></td>
+            <td><button class="darkbutton"onclick="add(8)">8</button></td>
+            <td><button class="darkbutton"onclick="add(9)">9</button></td>
+            <td><button class="accentbutton"onclick="operationfunction('X')">X</button></td>
+    </tr>
+    <tr>
+            <td><button class="darkbutton"onclick="add(4)">4</button></td>
+            <td><button class="darkbutton"onclick="add(5)">5</button></td>
+            <td><button class="darkbutton"onclick="add(6)">6</button></td>
+            <td><button class="accentbutton"onclick="operationfunction('-')">-</button></td>
+        </tr>
+    <tr>
+            <td><button class="darkbutton" onclick="add(1)">1</button></td>
+            <td><button class="darkbutton"onclick="add(2)">2</button></td>
+            <td><button class="darkbutton"onclick="add(3)">3</button></td>
+            <td><button class="accentbutton"onclick="operationfunction('+')">+</button></td>
+    </tr>
+        <tr>
+            <td colapsan="2">
+                <button class="cerobutton darkbutton">0</button>
+            </td>
+            <td><button class="darkbutton">,</button></td>
+            <td><button class="darkbutton"onclick="igual()">=</button></td>
+        </tr>
+        <tr>
+                <td>
+                <button class="acentButton"> x&#178</button>
+                </td>
+                <td>
+                <button class="acentButton"> x&#179</button>
+                </td>
+                <td>
+                <button class="acentButton"> PI</button>
+                </td>
+                <td>
+                <button class="acentButton"> &radic;</button>
+                </td>
+        </tr>
+    </table>
+
+    
+</body>
+<script src="./JS/Funcionalidad de calculadora.js"></script>
+</html>

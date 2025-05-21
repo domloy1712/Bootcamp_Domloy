@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dia {
+            background-color: bisque;
+            color: #333;
+        }
+
+        .noche {
+            background-color: #333;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container dia">
+        <h1 id="titulo">HOLA MUNDO</h1>
+        <button>Cambiar</button>
+        <button>Restaurar</button>
+
+        <button>Borrar</button>
+
+        <button id="mensaje">Mensaje</button>
+        <button id="borrar">Borra elemento list</button>
+
+        <ul id="la_lista">
+
+        </ul>
+        <button id="crear">Crear</button>
+        <input type="text" id="Texto"></input>
+        <button id="dia">dia</button>
+        <button id="noche">noche</button>
+        <button id="dia_noche">cambiar a Oscuro</button>
+    </div>
+
+    <script>
+        let elemento = document.getElementById('titulo');
+        let botones = document.getElementsByTagName('button');
+
+        let lista_compra = ['peras', 'manzanas', 'cafe', 'agua', 'cerveza 0.0']
+
+        let boton_dia =  document.getElementById('dia');
+        let boton_noche =  document.getElementById('noche');
+        let boton_dia_noche =  document.getElementById('dia_noche');
+        let div_container = document.getElementsByClassName('container')[0];
+
+        function mensaje() {
+
+
+            alert('Hola ka se!')
+        }
+
+
+        botones[0].addEventListener('click', function () {
+            elemento.textContent = 'Ahora si que lo cambio';
+        })
+        botones[1].addEventListener('mouseover', function () {
+            elemento.textContent = 'Hello world';
+        })
+        botones[2].addEventListener('dblclick', function () {
+            elemento.textContent = '';
+        })
+
+        document.querySelector('#mensaje').addEventListener('click', mensaje);
+        let cosa = '';
+        let elemento_ul = document.getElementById('la_lista');
+        let boton_borrar = document.getElementById('borrar');
+        boton_borrar.addEventListener('click', function () {
+            elemento_ul.removeChild('li');
+        })
+        for (cosa of lista_compra) {
+            let nuevo_elemento_li = document.createElement('li');
+            nuevo_elemento_li.textContent = cosa;
+            elemento_ul.appendChild(nuevo_elemento_li);
+
+        }
+        boton_borrar.addEventListener('click', function () {
+            elemento_ul.lastChild.remove()
+        });
+
+        boton_noche.addEventListener('click',function(){
+            div_container.classList.remove('dia');
+            div_container.classList.add('noche');
+        })
+
+        boton_dia.addEventListener('click',function(){
+            div_container.classList.add('dia');
+            div_container.classList.remove('noche');
+        })
+        boton_dia_noche.addEventListener('click',function(){
+            div_container.classList.toggle('dia');
+            div_container.classList.toggle('noche');
+        })
+    </script>
+</body>
+
+</html>

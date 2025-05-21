@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Winky Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+header {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+main {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    padding: 10px;
+}
+
+#izq {
+    width: 70vw;
+    height: 70vh;
+    padding: 100px;
+    background-color: rgb(255, 170, 0);
+}
+
+#der {
+    width: 30vw;
+    height: 70vh;
+    background-color: rgb(30, 0, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    margin-top: 15px;
+    background-color: rgb(4, 4, 4);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+}
+
+#resultado h2 {
+    font-size: 88px;
+}
+
+#palabra input {
+    font-size: 58px;
+    width: 150px;
+    text-align: center;
+}
+
+#palabra button {
+    margin-left: 5%;
+    width: 100px;
+    height:  100px;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    box-shadow: 15px 15px 20px rgb(75, 73, 73);
+}
+
+#intentos p {
+    font-size: 48px;
+    margin-left: 50%;
+}
+
+#imagen img {
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+}
