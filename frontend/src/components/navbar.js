@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/Authcontext';
+import { useAuth } from '../context/AuthContext';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -15,7 +15,7 @@ export default function Navbar() {
         )}
         {user && (
           <>
-            <span className="text-light mx-2">👤 {user.name}</span>
+            <span className="text-light mx-2">{user.name}</span>
             <button className="btn btn-outline-light btn-sm" onClick={logout}>Cerrar sesión</button>
           </>
         )}

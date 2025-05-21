@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 export default function Admin() {
-  
-    const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
   let user = null;
 
   try {
-    user = token ? jwt_decode(token) : null;
+    user = token ? jwtDecode(token) : null;
   } catch (err) {
     user = null;
   }
@@ -35,4 +34,4 @@ export default function Admin() {
       </ul>
     </div>
   );
-};
+}
