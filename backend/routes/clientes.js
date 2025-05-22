@@ -1,5 +1,7 @@
-const express = express();
-const router = express.router;
+const express = require('express');
+const Router = express.Router();
 
 
-router.get
+
+
+module.exports = Router;

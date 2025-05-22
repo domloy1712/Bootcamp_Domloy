@@ -1,8 +1,8 @@
-const express = express();
-const router = express.router;
+const express = require('express');
+const router = express.Router();
 const prcontroller = require('../controller/productosController');
 
-router.get('/',prcontroller.productos);
-router.post('/',prcontroller.crearproductos);
+router.get('/', prcontroller.productos);
+router.post('/', prcontroller.crearproductos);
 
-export default router;
+module.exports= router;
