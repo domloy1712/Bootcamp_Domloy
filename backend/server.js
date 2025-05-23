@@ -11,5 +11,5 @@ app.use('/api/categories', require('./routes/category.routes'));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`Mi super servidor ${PORT}`);
+  console.log(`Mi super servidor https://localhost:4000${PORT}`);
 });
