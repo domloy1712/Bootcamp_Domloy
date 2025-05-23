@@ -2,9 +2,11 @@ const express = require('express');
 const Router = express.Router();
 const clientesController = require('../controller/clientesController');
 
-router.get('/', clientesController.mostrar);
-router.post('/', clientesController.crear);
-router.delete('/:id', )
+Router.get('/', clientesController.mostrar);
+
+Router.post('/', clientesController.crear);
+
+Router.delete('/:id',clientesController.borrar)
 
 
 
