@@ -21,3 +21,15 @@ exports.crearproductos = async (req,res) =>{
        res.status(500).json({ error: 'Error al crear producto' });
     }
 };
+
+exports.eliminar = async (req,res) => {
+   const { id } = req.params;
+    try{
+        await db.query('DELETE FROM Productos WHERE id_producto= ?', [id])
+        res.json({ message:'Borrado correctamente' })
+
+    }  catch (error) {
+       console.log('Error al borar el producto:', error);
+       res.status(500).json({ error: 'Error al borrarlo producto' });
+    }
+};
