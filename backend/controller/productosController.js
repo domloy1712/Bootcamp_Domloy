@@ -1,5 +1,18 @@
 const db = require('../db');
 
+exports.verproducto = async (req,res) => {
+    const {id} = req.params;
+    try {
+        const [rows] = await db.query('SELECT * FROM Productos WHERE id_producto= ?', [id]);
+        res.json(rows);
+    } catch (error) {
+        console.log('Error al buscar el producto', error);
+        res.status(500).json({error: 'Error al ver el producto'})
+    }
+}
+
+
+
 exports.productos = async (req,res) => {
     
     try { const [rows] = await db.query('SELECT * FROM Productos');
