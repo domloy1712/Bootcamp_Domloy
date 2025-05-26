@@ -1,0 +1,16 @@
+ // Insert a document
+        const doc = { nombre: "", age: 25 };
+        const result = await collection.insertOne(doc);
+        console.log(`New document inserted with _id: ${result.insertedId}`);
+
+        // Find a document
+        const foundDoc = await collection.findOne({ name: "Alice" });
+        console.log('Found document:', foundDoc);
+
+        // Update a document
+        const updateResult = await collection.updateOne({ name: "Alice" }, { $set: { age: 26 } });
+        console.log(`Documents updated: ${updateResult.modifiedCount}`);
+
+        // Delete a document
+        const deleteResult = await collection.deleteOne({ name: "Alice" });
+        console.log(`Documents deleted: ${deleteResult.deletedCount}`);
