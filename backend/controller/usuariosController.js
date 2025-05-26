@@ -1,14 +1,15 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const pool = require('../db');
 
 exports.register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { nombre, email, password } = req.body;
   try {
-    const [existing] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+    const [existing] = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email]);
     if (existing.length > 0) return res.status(400).json({ msg: 'El correo ya está registrado.' });
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    await pool.query('INSERT INTO users (name, email, password) VALUES (?, ?, ? )', [name, email, hashedPassword]);
+    await pool.query('INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ? )', [nombre , email, hashedPassword]);
 
     res.json({ msg: 'Usuario registrado correctamente.' });
   } catch (err) {
@@ -20,18 +21,18 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+    const [rows] = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email]);
     const user = rows[0];
     if (!user) return res.status(401).json({ msg: 'Usuario no encontrado.' });
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(401).json({ msg: 'Contraseña incorrecta.' });
 
-    const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
       expiresIn: '1d'
     });
 
-    res.json({ token, user: { id: user.id, name: user.name, role: user.role } });
+    res.json({ token, user: { id: user.id, nombre: user.nombre, } });
   } catch (err) {
     res.status(500).json({ msg: 'Error interno.', error: err.message });
   }
