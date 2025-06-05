@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import csv 
 import schedule
-import time
 
 info = []
 url = 'https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops'
