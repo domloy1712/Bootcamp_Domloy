@@ -1,7 +1,10 @@
 from videoclub import VideoClub
+from exportar import exportar_alquileres_a_csv
+
 
 def menu():
     v = VideoClub()
+    
     while True:
         print("\n🎬 VIDEOCLUB")
         print("1. Añadir película")
@@ -10,7 +13,8 @@ def menu():
         print("4. Alquilar película")
         print("5. Devolver película")
         print("6. Ver historial")
-        print("7. Salir")
+        print("7. exportar a CSV")
+        print("8. Salir")
         op = input("Opción: ")
 
         if op == "1":
@@ -26,6 +30,9 @@ def menu():
         elif op == "6":
             v.mostrar_historial()
         elif op == "7":
+            print("Exportado")
+            exportar_alquileres_a_csv()
+        elif op == "8":
             break
         else:
             print("❌ Opción no válida.")

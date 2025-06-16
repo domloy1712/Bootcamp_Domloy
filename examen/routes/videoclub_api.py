@@ -9,9 +9,16 @@ class VideoClub:
 
     def mostrar_peliculas(self):
         peliculas = self.db.listar_peliculas()
+        resultado = []
         for p in peliculas:
             estado = "Disponible" if p.disponible else "Alquilada"
-            print(f"{p.id}. {p.titulo} - {estado}")
+            resultado.append({
+            "id": p.id,
+            "titulo": p.titulo,
+            "estado": estado
+        })
+        return resultado
+        
     
     def registrar_cliente(self, nombre):
         self.db.registrar_cliente(nombre)
@@ -27,7 +34,16 @@ class VideoClub:
         print("Pelicula devuelta")
 
     def mostrar_historial(self):
+        resultado = []
         for h in self.db.historial():
             estado = "Devuelto" if h[4] else "En alquiler"
-            print(f"[{h[0]}] {h[1]} alquiló '{h[2]}' el {h[3]} - {estado}")
+            resultado.append({        
+            "id": h[0],
+            "cliente": h[1],
+            "pelicula": h[2],
+            "fecha": h[3],
+            "estado": estado
+        })
+        return resultado 
+            
 

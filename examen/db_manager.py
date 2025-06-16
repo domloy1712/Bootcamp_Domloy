@@ -1,6 +1,7 @@
 import sqlite3
 from datetime import datetime
 from models import Pelicula, Cliente, Alquiler
+import csv
 
 class DBManager:
     def __init__(self, db_name="videoclub.db"):
@@ -29,6 +30,8 @@ class DBManager:
                 cliente_id INTEGER,
                 pelicula_id INTEGER,
                 fecha TEXT,
+                fecha_vencimiento TEXT,
+                penalizacion INT,
                 devuelto INTEGER DEFAULT 0          
             )""")
         
@@ -55,8 +58,9 @@ class DBManager:
         if self.cursor.fetchone()[0] == 0:
             return False
         fecha = datetime.now().strftime("%Y-%m-%d %H:%M")
-        self.cursor.execute("INSERT INTO alquileres (cliente_id, pelicula_id, fecha) VALUES (?,?,?)",
-                            (cliente_id, pelicula_id, fecha))
+        fecha_vencimiento = datetime.now() 
+        self.cursor.execute("INSERT INTO alquileres (cliente_id, pelicula_id, fecha, fecha_vencimiento) VALUES (?,?,?,?)",
+                            (cliente_id, pelicula_id, fecha, fecha_vencimiento))
         self.cursor.execute("UPDATE peliculas SET disponible=0 where id=?",(pelicula_id,))
         self.conn.commit()
     
@@ -74,4 +78,7 @@ class DBManager:
             ORDER BY a.fecha DESC
         """)
         return self.cursor.fetchall()
-        
+    
+ 
+    
+    

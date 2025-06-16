@@ -10,7 +10,7 @@ class Cliente:
         self.nombre = nombre
 
 class Alquiler():
-    def __init__(self, id,cliente_id,pelicula_id, fecha, devuelto=False ):
+    def __init__(self, id,cliente_id,pelicula_id, fecha,devuelto=False):
         self.id = id
         self.cliente_id = cliente_id
         self.pelicula_id = pelicula_id
