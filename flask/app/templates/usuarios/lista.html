@@ -1,0 +1,11 @@
+<h1>Lista de Usuarios</h1>
+<a href="{{ url_for('usuarios.crear') }}">Nuevo Usuario</a>
+<ul>
+    {% for u in usuarios %}
+    <li>{{ u.nombre }} - {{ u.email }}
+        <a href="{{ url_for('usuarios.eliminar', id=u.id)
+
+}}">[Eliminar]</a>
+    </li>
+    {% endfor %}
+</ul>
